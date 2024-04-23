@@ -34,4 +34,53 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfUsuario" nillable="true" type="tns:ArrayOfUsuario" />
+  <xs:complexType name="Usuarios">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="apellido" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="clave" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="id_usuario" type="xs:int" />
+      <xs:element minOccurs="0" name="login" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="rol" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Usuarios" nillable="true" type="tns:Usuarios" />
+  <xs:complexType name="ArrayOfUsuarios">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Usuarios" nillable="true" type="tns:Usuarios" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUsuarios" nillable="true" type="tns:ArrayOfUsuarios" />
+  <xs:complexType name="Trabajos">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="archivo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fecha_entrega" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="id_materia" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="id_trabajo" type="xs:int" />
+      <xs:element minOccurs="0" name="id_usuario" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="tipo_trabajo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Trabajos" nillable="true" type="tns:Trabajos" />
+  <xs:complexType name="ArrayOfTrabajos">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Trabajos" nillable="true" type="tns:Trabajos" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTrabajos" nillable="true" type="tns:ArrayOfTrabajos" />
+  <xs:complexType name="Materias">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codigo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id_materia" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Materias" nillable="true" type="tns:Materias" />
+  <xs:complexType name="ArrayOfMaterias">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Materias" nillable="true" type="tns:Materias" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMaterias" nillable="true" type="tns:ArrayOfMaterias" />
 </xs:schema>

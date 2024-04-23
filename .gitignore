@@ -1,0 +1,12 @@
+﻿################################################################################
+# Este archivo .gitignore ha sido creado automáticamente por Microsoft(R) Visual Studio.
+################################################################################
+
+/WebApplication008/obj/Release/edmxResourcesToEmbed/Models
+/WebApplication008/obj/Release/DesignTimeResolveAssemblyReferencesInput.cache
+/WebApplication008/.vs/WebApplication008/FileContentIndex/200e8960-d8f6-4430-9814-78f56cade7cb.vsidx
+/WebApplication008/.vs/WebApplication008/FileContentIndex/38ba2eb6-f5f0-49cd-9970-48fea305331d.vsidx
+/WebApplication008/.vs/WebApplication008/FileContentIndex/483a068d-a84c-426c-b40f-e8f4f95ae384.vsidx
+/WebApplication008/.vs/WebApplication008/FileContentIndex/8d4f1be7-6cf6-4489-b4fb-65f1113f8854.vsidx
+/WebApplication008/.vs/WebApplication008/FileContentIndex/96063445-eede-4ce3-b662-e9aa986b6caa.vsidx
+/WebApplication008/.vs/WebApplication008/FileContentIndex/ca52cffb-30cf-4d5d-bde1-8e1348f0a470.vsidx

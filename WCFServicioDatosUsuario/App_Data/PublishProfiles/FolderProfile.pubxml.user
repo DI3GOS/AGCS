@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 https://go.microsoft.com/fwlink/?LinkID=208121.
@@ -7,4 +8,15 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <History>True|2024-04-22T00:28:17.4490155Z;</History>
     <LastFailureDetails />
   </PropertyGroup>
+=======
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <History>True|2024-04-22T00:28:17.4490155Z;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+>>>>>>> 2ccf1ddfa05b5b9f1a5fc9cd728554ee4c604d11
 </Project>

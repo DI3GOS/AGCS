@@ -21,6 +21,11 @@ namespace WebApplication008.Models
         [Display(Name = "Clave")]
         [StringLength(20)]
         public string Password { get; set; }
-        
+
+        [Required(ErrorMessage = "Seleccione el Rol")]
+        [DataType(DataType.Text)]
+        [Display(Name = "Rol")]
+        [StringLength(50)]
+        public string Rol { get; set; }
     }
 }

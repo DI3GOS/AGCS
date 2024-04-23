@@ -79,6 +79,108 @@
   <wsdl:message name="IService_BorrarUsuarioPorId_OutputMessage">
     <wsdl:part name="parameters" element="tns:BorrarUsuarioPorIdResponse" />
   </wsdl:message>
+  <wsdl:message name="IService_CrearUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:CrearUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IService_CrearUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CrearUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ConsultarUsuarios_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarUsuarios" />
+  </wsdl:message>
+  <wsdl:message name="IService_ConsultarUsuarios_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarUsuariosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ConsultarUsuarioPorId_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarUsuarioPorId" />
+  </wsdl:message>
+  <wsdl:message name="IService_ConsultarUsuarioPorId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarUsuarioPorIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ConsultarUsuariosPorNombre_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarUsuariosPorNombre" />
+  </wsdl:message>
+  <wsdl:message name="IService_ConsultarUsuariosPorNombre_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarUsuariosPorNombreResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ConsultarUsuariosPorLogin_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarUsuariosPorLogin" />
+  </wsdl:message>
+  <wsdl:message name="IService_ConsultarUsuariosPorLogin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarUsuariosPorLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_EditarUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditarUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IService_EditarUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditarUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_EliminarUsuarioPorId_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarUsuarioPorId" />
+  </wsdl:message>
+  <wsdl:message name="IService_EliminarUsuarioPorId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarUsuarioPorIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_CrearTrabajo_InputMessage">
+    <wsdl:part name="parameters" element="tns:CrearTrabajo" />
+  </wsdl:message>
+  <wsdl:message name="IService_CrearTrabajo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CrearTrabajoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_EditarTrabajo_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditarTrabajo" />
+  </wsdl:message>
+  <wsdl:message name="IService_EditarTrabajo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditarTrabajoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ListarTrabajosPorIdMateria_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarTrabajosPorIdMateria" />
+  </wsdl:message>
+  <wsdl:message name="IService_ListarTrabajosPorIdMateria_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarTrabajosPorIdMateriaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ListarTrabajosPorIdMateriaPorUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarTrabajosPorIdMateriaPorUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IService_ListarTrabajosPorIdMateriaPorUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarTrabajosPorIdMateriaPorUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_EliminarTrabajoPorId_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarTrabajoPorId" />
+  </wsdl:message>
+  <wsdl:message name="IService_EliminarTrabajoPorId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarTrabajoPorIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_CrearMateria_InputMessage">
+    <wsdl:part name="parameters" element="tns:CrearMateria" />
+  </wsdl:message>
+  <wsdl:message name="IService_CrearMateria_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CrearMateriaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_EditarMateria_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditarMateria" />
+  </wsdl:message>
+  <wsdl:message name="IService_EditarMateria_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditarMateriaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ListarMaterias_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarMaterias" />
+  </wsdl:message>
+  <wsdl:message name="IService_ListarMaterias_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarMateriasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ListarMateriasPorId_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarMateriasPorId" />
+  </wsdl:message>
+  <wsdl:message name="IService_ListarMateriasPorId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarMateriasPorIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_EliminarMateriaPorId_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarMateriaPorId" />
+  </wsdl:message>
+  <wsdl:message name="IService_EliminarMateriaPorId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarMateriaPorIdResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService">
     <wsdl:operation name="InsertarEmpleado">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/InsertarEmpleado" message="tns:IService_InsertarEmpleado_InputMessage" />
@@ -127,6 +229,74 @@
     <wsdl:operation name="BorrarUsuarioPorId">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/BorrarUsuarioPorId" message="tns:IService_BorrarUsuarioPorId_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/BorrarUsuarioPorIdResponse" message="tns:IService_BorrarUsuarioPorId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/CrearUsuario" message="tns:IService_CrearUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/CrearUsuarioResponse" message="tns:IService_CrearUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarUsuarios">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ConsultarUsuarios" message="tns:IService_ConsultarUsuarios_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ConsultarUsuariosResponse" message="tns:IService_ConsultarUsuarios_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarUsuarioPorId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ConsultarUsuarioPorId" message="tns:IService_ConsultarUsuarioPorId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ConsultarUsuarioPorIdResponse" message="tns:IService_ConsultarUsuarioPorId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarUsuariosPorNombre">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ConsultarUsuariosPorNombre" message="tns:IService_ConsultarUsuariosPorNombre_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ConsultarUsuariosPorNombreResponse" message="tns:IService_ConsultarUsuariosPorNombre_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarUsuariosPorLogin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ConsultarUsuariosPorLogin" message="tns:IService_ConsultarUsuariosPorLogin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ConsultarUsuariosPorLoginResponse" message="tns:IService_ConsultarUsuariosPorLogin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditarUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/EditarUsuario" message="tns:IService_EditarUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/EditarUsuarioResponse" message="tns:IService_EditarUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarUsuarioPorId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/EliminarUsuarioPorId" message="tns:IService_EliminarUsuarioPorId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/EliminarUsuarioPorIdResponse" message="tns:IService_EliminarUsuarioPorId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearTrabajo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/CrearTrabajo" message="tns:IService_CrearTrabajo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/CrearTrabajoResponse" message="tns:IService_CrearTrabajo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditarTrabajo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/EditarTrabajo" message="tns:IService_EditarTrabajo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/EditarTrabajoResponse" message="tns:IService_EditarTrabajo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarTrabajosPorIdMateria">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ListarTrabajosPorIdMateria" message="tns:IService_ListarTrabajosPorIdMateria_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ListarTrabajosPorIdMateriaResponse" message="tns:IService_ListarTrabajosPorIdMateria_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarTrabajosPorIdMateriaPorUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ListarTrabajosPorIdMateriaPorUsuario" message="tns:IService_ListarTrabajosPorIdMateriaPorUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ListarTrabajosPorIdMateriaPorUsuarioResponse" message="tns:IService_ListarTrabajosPorIdMateriaPorUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarTrabajoPorId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/EliminarTrabajoPorId" message="tns:IService_EliminarTrabajoPorId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/EliminarTrabajoPorIdResponse" message="tns:IService_EliminarTrabajoPorId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearMateria">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/CrearMateria" message="tns:IService_CrearMateria_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/CrearMateriaResponse" message="tns:IService_CrearMateria_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditarMateria">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/EditarMateria" message="tns:IService_EditarMateria_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/EditarMateriaResponse" message="tns:IService_EditarMateria_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarMaterias">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ListarMaterias" message="tns:IService_ListarMaterias_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ListarMateriasResponse" message="tns:IService_ListarMaterias_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarMateriasPorId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ListarMateriasPorId" message="tns:IService_ListarMateriasPorId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ListarMateriasPorIdResponse" message="tns:IService_ListarMateriasPorId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarMateriaPorId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/EliminarMateriaPorId" message="tns:IService_EliminarMateriaPorId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/EliminarMateriaPorIdResponse" message="tns:IService_EliminarMateriaPorId_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService" type="tns:IService">
@@ -232,6 +402,159 @@
     </wsdl:operation>
     <wsdl:operation name="BorrarUsuarioPorId">
       <soap:operation soapAction="http://tempuri.org/IService/BorrarUsuarioPorId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearUsuario">
+      <soap:operation soapAction="http://tempuri.org/IService/CrearUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarUsuarios">
+      <soap:operation soapAction="http://tempuri.org/IService/ConsultarUsuarios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarUsuarioPorId">
+      <soap:operation soapAction="http://tempuri.org/IService/ConsultarUsuarioPorId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarUsuariosPorNombre">
+      <soap:operation soapAction="http://tempuri.org/IService/ConsultarUsuariosPorNombre" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarUsuariosPorLogin">
+      <soap:operation soapAction="http://tempuri.org/IService/ConsultarUsuariosPorLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditarUsuario">
+      <soap:operation soapAction="http://tempuri.org/IService/EditarUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarUsuarioPorId">
+      <soap:operation soapAction="http://tempuri.org/IService/EliminarUsuarioPorId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearTrabajo">
+      <soap:operation soapAction="http://tempuri.org/IService/CrearTrabajo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditarTrabajo">
+      <soap:operation soapAction="http://tempuri.org/IService/EditarTrabajo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarTrabajosPorIdMateria">
+      <soap:operation soapAction="http://tempuri.org/IService/ListarTrabajosPorIdMateria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarTrabajosPorIdMateriaPorUsuario">
+      <soap:operation soapAction="http://tempuri.org/IService/ListarTrabajosPorIdMateriaPorUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarTrabajoPorId">
+      <soap:operation soapAction="http://tempuri.org/IService/EliminarTrabajoPorId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearMateria">
+      <soap:operation soapAction="http://tempuri.org/IService/CrearMateria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditarMateria">
+      <soap:operation soapAction="http://tempuri.org/IService/EditarMateria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarMaterias">
+      <soap:operation soapAction="http://tempuri.org/IService/ListarMaterias" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarMateriasPorId">
+      <soap:operation soapAction="http://tempuri.org/IService/ListarMateriasPorId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarMateriaPorId">
+      <soap:operation soapAction="http://tempuri.org/IService/EliminarMateriaPorId" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
