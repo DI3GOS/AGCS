@@ -25,4 +25,12 @@ public partial class LoginDBEntities : DbContext
 
     public virtual DbSet<EmployeeDetails> EmployeeDetails { get; set; }
     public virtual DbSet<Usuario> Usuario { get; set; }
+    public virtual DbSet<Productos> Productos { get; set; }
+    public virtual DbSet<Asistencias> Asistencias { get; set; }
+    public virtual DbSet<Calificaciones> Calificaciones { get; set; }
+    public virtual DbSet<Materias> Materias { get; set; }
+    public virtual DbSet<Materias_docentes> Materias_docentes { get; set; }
+    public virtual DbSet<Materias_estudiantes> Materias_estudiantes { get; set; }
+    public virtual DbSet<Trabajos> Trabajos { get; set; }
+    public virtual DbSet<Usuarios> Usuarios { get; set; }
 }

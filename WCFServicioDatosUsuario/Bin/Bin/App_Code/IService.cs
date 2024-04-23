@@ -22,6 +22,9 @@ public interface IService
 	EmployeeDetails ObtenerEmpleadoPorId(int empId); // R
 
 	[OperationContract]
+	List<EmployeeDetails> ObtenerEmpleadosPorNombre(string Name); // R
+
+	[OperationContract]
 	int ModificarEmpleado(EmployeeDetails emp); // U
 
 	[OperationContract]
@@ -39,6 +42,9 @@ public interface IService
 
 	[OperationContract]
 	Usuario ObtenerUsuarioPorId(int id);   //R
+
+	[OperationContract]
+	List<Usuario> ObtenerUsuariosPorNombre(string Name);   //R
 
 	[OperationContract]
 	int ModificarUsuario(Usuario user);  //U

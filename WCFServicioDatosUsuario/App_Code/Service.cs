@@ -477,20 +477,21 @@ public class Service : IService
 		bool bandera = false;
         try
         {
-            var newtrabajo = new Trabajos();
+            var newTrabajo = new Trabajos();
+			                  
+            newTrabajo.id_trabajo = trabajo.id_trabajo;
+            newTrabajo.id_usuario = trabajo.id_usuario;
+            newTrabajo.id_materia = trabajo.id_materia;
+            newTrabajo.tipo_trabajo = trabajo.tipo_trabajo.Trim();
+            newTrabajo.archivo = trabajo.archivo.Trim();
+            newTrabajo.fecha_entrega = trabajo.fecha_entrega;
 
-            //newuser.Id = 0;  //identity
-            newtrabajo.id_trabajo = trabajo.id_trabajo;
-            newtrabajo.id_materia = trabajo.id_materia;
-            newtrabajo.tipo_trabajo = trabajo.tipo_trabajo.Trim();
-            newtrabajo.archivo = trabajo.tipo_trabajo.Trim();
-            newtrabajo.fecha_entrega = trabajo.fecha_entrega;
-
-            DBcontext.Trabajos.Add(newtrabajo);
+            DBcontext.Trabajos.Add(newTrabajo);
             Retval = DBcontext.SaveChanges();
             bandera = Retval == 1 ? true : false;
             return bandera;
-        }
+
+		}
         catch (Exception)
         {
             return bandera;
@@ -524,7 +525,7 @@ public class Service : IService
         }
     }
 
-    //READ ALL Trabajos
+    //READ Trabajos por id Materia
     public List<Trabajos> ListarTrabajosPorIdMateria(int id_materia)
     {
         LoginDBEntities contextDb = new LoginDBEntities();
@@ -548,9 +549,168 @@ public class Service : IService
         return trabajolist;
     }
 
-	#endregion
+    //READ Trabajos por id Materia y id Usuario
+    public List<Trabajos> ListarTrabajosPorIdMateriaPorUsuario(int id_materia, int id_usuario)
+    {
+        LoginDBEntities contextDb = new LoginDBEntities();
+        List<Trabajos> trabajolist = new List<Trabajos>();
+
+        var lstTrabajos = from k in contextDb.Trabajos 
+						  where k.id_materia == id_materia && 
+						  k.id_usuario == id_usuario select k;
+
+        foreach (var item in lstTrabajos)
+        {
+            Trabajos trabajo = new Trabajos();
+            trabajo.id_trabajo = item.id_trabajo;
+            trabajo.id_usuario = item.id_usuario;
+            trabajo.id_materia = item.id_materia;
+            trabajo.tipo_trabajo = item.tipo_trabajo.Trim();
+            trabajo.archivo = item.archivo.Trim();
+            trabajo.fecha_entrega = item.fecha_entrega;
+
+            trabajolist.Add(trabajo);
+        }
+        return trabajolist;
+    }
+
+	//DELETE por Id trabajo.
+    public bool EliminarTrabajoPorId(int idTrabajo)
+    {
+        int Retval = 0;
+        bool bandera = false;
+        try
+        {
+            Trabajos myTrabajo = new Trabajos();
+            myTrabajo.id_trabajo = idTrabajo;
+            DBcontext.Entry(myTrabajo).State = EntityState.Deleted;
+            Retval = DBcontext.SaveChanges();
+            bandera = Retval == 1 ? true : false;
+            return bandera;
+        }
+        catch (Exception)
+        {
+            return bandera;
+        }
+    }
+
+    #endregion
 
     #region "Materias"
+
+	//CREATE Materias
+    public bool CrearMateria(Materias materia)
+    {
+        int Retval = 0;
+        bool bandera = false;
+        try
+        {
+            var newMateria = new Materias
+            {                
+                id_materia = materia.id_materia,
+                nombre = materia.nombre.Trim(),
+                codigo = materia.codigo.Trim(),
+                descripcion = materia.descripcion.Trim()
+            };
+
+            DBcontext.Materias.Add(newMateria);
+            Retval = DBcontext.SaveChanges();
+            bandera = Retval == 1 ? true : false;
+            return bandera;
+        }
+        catch (Exception)
+        {
+            return bandera;
+        }
+    }
+
+    //UPDATE Materias BY Trabajo
+    public bool EditarMateria(Materias materia)
+    {
+        int Retval = 0;
+        bool bandera = false;
+        try
+        {
+            LoginDBEntities contextDb = new LoginDBEntities();
+            Materias materiaObj = new Materias();
+            materiaObj.id_materia = materia.id_materia;
+            materiaObj.nombre = materia.nombre.Trim();
+            materiaObj.codigo = materia.codigo.Trim();
+            materiaObj.descripcion = materia.descripcion.Trim();
+            
+            contextDb.Entry(materia).State = EntityState.Modified;
+            Retval = contextDb.SaveChanges();
+            bandera = Retval == 1 ? true : false;
+            return bandera;
+        }
+        catch (Exception)
+        {
+            return bandera;
+        }
+    }
+
+    //READ Consultar Materias
+    public List<Materias> ListarMaterias()
+    {
+        LoginDBEntities contextDb = new LoginDBEntities();
+        List<Materias> materialist = new List<Materias>();
+
+        var lstMaterias = from k in contextDb.Materias select k;
+
+        foreach (var item in lstMaterias)
+        {
+            Materias materia = new Materias();
+            materia.id_materia = item.id_materia;
+            materia.nombre = item.nombre.Trim();
+            materia.codigo = item.codigo.Trim();
+            materia.descripcion = item.descripcion.Trim();
+
+            materialist.Add(materia);
+        }
+        return materialist;
+    }
+
+    //READ Consultar Materias por Id materia
+    public List<Materias> ListarMateriasPorId(int idMateria)
+    {
+        LoginDBEntities contextDb = new LoginDBEntities();
+        List<Materias> materialist = new List<Materias>();
+
+        var lstMaterias = from k in contextDb.Materias 
+                          where k.id_materia == idMateria select k;
+
+        foreach (var item in lstMaterias)
+        {
+            Materias materia = new Materias();
+            materia.id_materia = item.id_materia;
+            materia.nombre = item.nombre.Trim();
+            materia.codigo = item.codigo.Trim();
+            materia.descripcion = item.descripcion.Trim();
+
+            materialist.Add(materia);
+        }
+        return materialist;
+    }
+
+    //DELETE Materia por id Materia
+    public bool EliminarMateriaPorId(int idMateria)
+    {
+        int Retval = 0;
+        bool bandera = false;
+        try
+        {
+            Materias myMateria = new Materias();
+            myMateria.id_materia = idMateria;
+            DBcontext.Entry(myMateria).State = EntityState.Deleted;
+            Retval = DBcontext.SaveChanges();
+            bandera = Retval == 1 ? true : false;
+            return bandera;
+        }
+        catch (Exception)
+        {
+            return bandera;
+        }
+    }
 
     #endregion
 

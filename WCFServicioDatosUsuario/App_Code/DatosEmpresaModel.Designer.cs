@@ -1,4 +1,4 @@
-﻿// La generación de código T4 está habilitada para el modelo 'C:\Users\dsanchez\Downloads\PROYECTO_FINAL_ENTREGA\PROYECTO_FINAL_ENTREGA\WCFServicioDatosUsuario\App_Code\DatosEmpresaModel.edmx'. 
+﻿// La generación de código T4 está habilitada para el modelo 'C:\Users\Johny\source\repos\Proyecto_Semana_6\WCFServicioDatosUsuario\App_Code\DatosEmpresaModel.edmx'. 
 // Para habilitar la generación de código heredada, cambie el valor de la propiedad del diseñador 'Estrategia de generación de código'
 // por 'ObjectContext heredado'. Esta propiedad está disponible en la ventana Propiedades cuando se abre
 // el modelo en el diseñador.

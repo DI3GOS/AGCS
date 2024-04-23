@@ -95,6 +95,32 @@ public class Service : IService
 		}
 	}
 
+	//READ EMPLOYEE BY NameEmployee
+	public List<EmployeeDetails> ObtenerEmpleadosPorNombre(string Name)
+	{
+		var lstEmp = from k in DBcontext.EmployeeDetails where k.Name.Contains(Name.ToString()) select k;		
+		List<EmployeeDetails> lstEmpl = new List<EmployeeDetails>();
+		try
+		{
+			foreach (var item in lstEmp)
+			{
+				EmployeeDetails empl = new EmployeeDetails(); //para que cree el nuevo usuario
+				empl.EmpId = item.EmpId;
+				empl.Name = item.Name.Trim();
+				empl.Address = item.Address.Trim();
+				empl.Age = item.Age;
+				empl.Salary = item.Salary;
+				empl.WorkType = item.WorkType.Trim();
+				lstEmpl.Add(empl);
+			}
+			return lstEmpl;
+		}
+		catch (Exception)
+		{
+			return lstEmpl;
+		}
+	}
+
 	//UPDATE EMPLOYEE BY EMPLOYEE
 	public int ModificarEmpleado(EmployeeDetails emp)
 	{
@@ -208,6 +234,26 @@ public class Service : IService
 			usr.Email = item.Email.Trim();
 		}
 		return usr;
+	}
+
+	//READ USER BY NAME
+	public List<Usuario> ObtenerUsuariosPorNombre(string Name)
+	{		
+		var lstUsr = from k in DBcontext.Usuario where k.Nombre.Contains(Name.ToString()) select k;		
+		List<Usuario> lstUser = new List<Usuario>();
+
+		foreach (var item in lstUsr)
+		{
+			Usuario usr = new Usuario();
+			usr.Id = item.Id;
+			usr.Nombre = item.Nombre.Trim();
+			usr.UserName = item.UserName.Trim();
+			usr.Password = item.Password.Trim();
+			usr.Apellido = item.Apellido.Trim();
+			usr.Email = item.Email.Trim();
+			lstUser.Add(usr);
+		}
+		return lstUser;
 	}
 
 	//UPDATE USER BY USER

@@ -52,32 +52,67 @@ public interface IService
 	[OperationContract]
 	int BorrarUsuarioPorId(int Id);  //D
 
-    #endregion
+	#endregion
 
-    #region "Usuarios"
+	#region "Usuarios"
 
-    [OperationContract]
-    bool CrearUsuario(Usuarios usuarios);  //C
+	[OperationContract]
+	bool CrearUsuario(Usuarios usuarios);  //C
 
-	[OperationContract]	
-    List<Usuarios> ConsultarUsuarios();     //R
+	[OperationContract]
+	List<Usuarios> ConsultarUsuarios();     //R
 
-    [OperationContract]
+	[OperationContract]
 	Usuarios ConsultarUsuarioPorId(int id); //R
 
 	[OperationContract]
 	List<Usuarios> ConsultarUsuariosPorNombre(string name); // R
 
-    [OperationContract]
-    List<Usuarios> ConsultarUsuariosPorLogin(string login); // R
+	[OperationContract]
+	List<Usuarios> ConsultarUsuariosPorLogin(string login); // R
 
-    [OperationContract]
-    bool EditarUsuario(Usuarios users); //U
+	[OperationContract]
+	bool EditarUsuario(Usuarios users); //U
 
 	[OperationContract]
 	bool EliminarUsuarioPorId(int userId); //D
 
+	#endregion
+
+	#region "Trabajos"
+	[OperationContract]
+	bool CrearTrabajo(Trabajos trabajo);
+
+	[OperationContract]
+	bool EditarTrabajo(Trabajos trabajo);
+
+	[OperationContract]
+	List<Trabajos> ListarTrabajosPorIdMateria(int id_materia);
+
+	[OperationContract]
+	List<Trabajos> ListarTrabajosPorIdMateriaPorUsuario(int id_materia, int id_usuario);
+
+	[OperationContract]
+	bool EliminarTrabajoPorId(int idTrabajo);
+	#endregion
+
+	#region "Materias"
+	[OperationContract]
+	bool CrearMateria(Materias materia);
+
+	[OperationContract]
+	bool EditarMateria(Materias materia);
+
+	[OperationContract]
+	List<Materias> ListarMaterias();
+
+	[OperationContract]
+	List<Materias> ListarMateriasPorId(int idMateria);
+
+	[OperationContract]
+	bool EliminarMateriaPorId(int idMateria);
     #endregion
+
 }
 
 [DataContract]

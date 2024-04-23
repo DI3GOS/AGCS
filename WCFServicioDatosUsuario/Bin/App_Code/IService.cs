@@ -52,7 +52,32 @@ public interface IService
 	[OperationContract]
 	int BorrarUsuarioPorId(int Id);  //D
 
-	#endregion
+    #endregion
+
+    #region "Usuarios"
+
+    [OperationContract]
+    bool CrearUsuario(Usuarios usuarios);  //C
+
+	[OperationContract]	
+    List<Usuarios> ConsultarUsuarios();     //R
+
+    [OperationContract]
+	Usuarios ConsultarUsuarioPorId(int id); //R
+
+	[OperationContract]
+	List<Usuarios> ConsultarUsuariosPorNombre(string name); // R
+
+    [OperationContract]
+    List<Usuarios> ConsultarUsuariosPorLogin(string login); // R
+
+    [OperationContract]
+    bool EditarUsuario(Usuarios users); //U
+
+	[OperationContract]
+	bool EliminarUsuarioPorId(int userId); //D
+
+    #endregion
 }
 
 [DataContract]

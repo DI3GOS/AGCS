@@ -301,5 +301,257 @@ public class Service : IService
 		}
 	}
 
+    #endregion
+
+    #region "Usuarios"
+
+	//CREATE Usuarios
+    public bool CrearUsuario(Usuarios usuarios)
+    {
+        int Retval = 0;
+		bool bandera = false;
+
+		try
+		{
+			var newuser = new Usuarios();
+
+			//newuser.Id = 0;  //identity
+			newuser.id_usuario = Convert.ToInt32(usuarios.id_usuario.ToString().Trim());
+			newuser.nombre = usuarios.nombre.Trim();
+			newuser.apellido = usuarios.apellido.Trim();
+			newuser.rol = usuarios.rol.Trim();
+			newuser.login = usuarios.login.Trim();
+            byte[] byteArrayClave = Encoding.ASCII.GetBytes(usuarios.clave.ToString().Trim());
+            newuser.clave = byteArrayClave;
+
+            DBcontext.Usuarios.Add(newuser);
+            Retval = DBcontext.SaveChanges();
+            bandera = Retval == 1 ? true : false;
+            return bandera;
+        }
+        catch (Exception)
+        {
+            return bandera;
+        }
+    }
+
+    //UPDATE Usuarios BY USER
+    public bool EditarUsuario(Usuarios users)
+    {
+        int Retval = 0;
+        bool bandera = false;
+        try
+        {
+            LoginDBEntities contextDb = new LoginDBEntities();
+            Usuarios usrdtl = new Usuarios();
+            usrdtl.id_usuario = users.id_usuario;
+            usrdtl.nombre = users.nombre.Trim();
+            usrdtl.apellido = users.apellido.Trim();
+            usrdtl.login = users.login.Trim();
+            usrdtl.clave = users.clave;
+            usrdtl.rol = users.rol.Trim();
+
+            contextDb.Entry(usrdtl).State = EntityState.Modified;
+            Retval = contextDb.SaveChanges();
+            bandera = Retval == 1 ? true : false;
+            return bandera;
+        }
+        catch (Exception ex)
+        {
+            //Cuando se tiene validacion de base de datos longitud saca error .Net
+            //El campo Name debe ser un tipo de cadena o matriz con una longitud máxima de '10'.
+            return bandera;
+        }
+    }
+
+    //READ ALL USERS
+    public List<Usuarios> ConsultarUsuarios()
+    {
+        LoginDBEntities contextDb = new LoginDBEntities();
+        List<Usuarios> userlist = new List<Usuarios>();
+
+        var lstUsr = from k in contextDb.Usuarios select k;
+
+        foreach (var item in lstUsr)
+        {
+            Usuarios usr = new Usuarios();
+            usr.id_usuario = item.id_usuario;
+            usr.nombre = item.nombre.Trim();
+            usr.apellido = item.apellido.Trim();
+            usr.login = item.login.Trim();
+            usr.clave = item.clave;
+            usr.rol = item.rol.Trim();
+
+            userlist.Add(usr);
+        }
+        return userlist;
+    }
+
+    //READ USER BY ID
+    public Usuarios ConsultarUsuarioPorId(int id)
+    {
+        LoginDBEntities tstDb = new LoginDBEntities();
+
+        var lstUsr = from k in tstDb.Usuarios where k.id_usuario == id select k;
+        Usuarios usr = new Usuarios();
+
+        foreach (var item in lstUsr)
+        {
+            usr.id_usuario = item.id_usuario;
+            usr.nombre = item.nombre.Trim();
+            usr.apellido = item.apellido.Trim();
+            usr.login = item.login.Trim();
+            usr.clave = item.clave;
+            usr.rol = item.rol.Trim();
+        }
+        return usr;
+    }
+
+    //READ USER BY NAME
+    public List<Usuarios> ConsultarUsuariosPorNombre(string name)
+    {
+        var lstUsr = from k in DBcontext.Usuarios where k.nombre.Contains(name.ToString()) select k;
+        List<Usuarios> listUser = new List<Usuarios>();
+
+        foreach (var item in lstUsr)
+        {
+            Usuarios usr = new Usuarios();
+            usr.id_usuario = item.id_usuario;
+            usr.nombre = item.nombre.Trim();
+            usr.apellido = item.apellido.Trim();
+            usr.login = item.login.Trim();
+            usr.clave = item.clave;
+            usr.rol = item.rol.Trim();
+            listUser.Add(usr);
+        }
+        return listUser;
+    }
+
+    //READ USER BY LOGIN
+    public List<Usuarios> ConsultarUsuariosPorLogin(string login)
+    {
+        var lstUsr = from k in DBcontext.Usuarios where k.login.Contains(login.ToString()) select k;
+        List<Usuarios> listUser = new List<Usuarios>();
+
+        foreach (var item in lstUsr)
+        {
+            Usuarios usr = new Usuarios();
+            usr.id_usuario = item.id_usuario;
+            usr.nombre = item.nombre.Trim();
+            usr.apellido = item.apellido.Trim();
+            usr.login = item.login.Trim();
+            usr.clave = item.clave;
+            usr.rol = item.rol.Trim();
+            listUser.Add(usr);
+        }
+        return listUser;
+    }
+
+    //DELETE USER BY ID
+    public bool EliminarUsuarioPorId(int userId)
+    {
+        int Retval = 0;
+		bool bandera = false;
+        try
+        {
+            Usuarios Myuser = new Usuarios();
+            Myuser.id_usuario = userId;
+            DBcontext.Entry(Myuser).State = EntityState.Deleted;
+            Retval = DBcontext.SaveChanges();
+            bandera = Retval == 1 ? true : false;
+            return bandera;
+        }
+        catch (Exception)
+        {
+            return bandera;
+        }
+    }
+    #endregion
+
+    #region "Trabajos"
+
+    //CREATE Trabajo
+    public bool CrearTrabajo(Trabajos trabajo)
+    {
+        int Retval = 0;
+		bool bandera = false;
+        try
+        {
+            var newtrabajo = new Trabajos();
+
+            //newuser.Id = 0;  //identity
+            newtrabajo.id_trabajo = trabajo.id_trabajo;
+            newtrabajo.id_materia = trabajo.id_materia;
+            newtrabajo.tipo_trabajo = trabajo.tipo_trabajo.Trim();
+            newtrabajo.archivo = trabajo.tipo_trabajo.Trim();
+            newtrabajo.fecha_entrega = trabajo.fecha_entrega;
+
+            DBcontext.Trabajos.Add(newtrabajo);
+            Retval = DBcontext.SaveChanges();
+            bandera = Retval == 1 ? true : false;
+            return bandera;
+        }
+        catch (Exception)
+        {
+            return bandera;
+        }
+    }
+
+    //UPDATE Trabajos BY Trabajo
+    public bool EditarTrabajo(Trabajos trabajo)
+    {
+        int Retval = 0;
+        bool bandera = false;
+        try
+        {
+            LoginDBEntities contextDb = new LoginDBEntities();
+            Trabajos trabajodtl = new Trabajos();
+            trabajodtl.id_trabajo = trabajo.id_trabajo;
+            trabajodtl.id_materia = trabajo.id_materia;
+            trabajodtl.tipo_trabajo = trabajo.tipo_trabajo.Trim();
+            trabajodtl.id_usuario = trabajo.id_usuario;
+            trabajodtl.archivo = trabajo.archivo;
+            trabajodtl.fecha_entrega = trabajo.fecha_entrega;
+
+            contextDb.Entry(trabajodtl).State = EntityState.Modified;
+            Retval = contextDb.SaveChanges();
+            bandera = Retval == 1 ? true : false;
+            return bandera;
+        }
+        catch (Exception)
+        {                        
+            return bandera;
+        }
+    }
+
+    //READ ALL Trabajos
+    public List<Trabajos> ListarTrabajosPorIdMateria(int id_materia)
+    {
+        LoginDBEntities contextDb = new LoginDBEntities();
+        List<Trabajos> trabajolist = new List<Trabajos>();
+
+        var lstTrabajos = from k in contextDb.Trabajos where k.id_materia == id_materia select k;
+
+
+        foreach (var item in lstTrabajos)
+        {
+            Trabajos trabajo = new Trabajos();
+            trabajo.id_trabajo	 = item.id_trabajo;
+            trabajo.id_usuario = item.id_usuario;
+            trabajo.id_materia = item.id_materia;
+            trabajo.tipo_trabajo = item.tipo_trabajo.Trim();
+            trabajo.archivo = item.archivo.Trim();
+            trabajo.fecha_entrega = item.fecha_entrega;
+
+            trabajolist.Add(trabajo);
+        }
+        return trabajolist;
+    }
+
 	#endregion
+
+    #region "Materias"
+
+    #endregion
+
 }
